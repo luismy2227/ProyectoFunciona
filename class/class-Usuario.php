@@ -36,5 +36,7 @@
 				" NombreUsuario: " . $this->nombreUsuario .
 				" ImagenRuta: " . $this->imagenRuta;
 		}
+
+		
 	}
 ?>

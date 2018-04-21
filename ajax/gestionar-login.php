@@ -9,6 +9,7 @@
     $contra=$_POST["text_contrasena"];
   }
   $conexion= new Conexion();
+  
   $query_call = "SELECT  * FROM Funcion_Login('".$correo."','".$contra."');";
   $resultados_call=$conexion->ejecutarConsulta($query_call);
   $respuesta=$conexion->obtenerFila($resultados_call);
