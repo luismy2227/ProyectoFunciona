@@ -198,11 +198,9 @@
                 <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Escriba el estado" placeholder="Observacion Estado Vehiculo"></textarea>
                 <div class="validation"></div>
                 <div class="text-center">
-                  <button class="btn btn-color btn-rounded" type="submit">Agregar</button>
-                  <button class="btn btn-color btn-rounded" type="submit">Editar</button>
-                  <button class="btn btn-color btn-rounded" type="submit">Actualizar</button>
+               
                   <button class="btn btn-color btn-rounded" type="submit">Guardar</button>
-                  <button class="btn btn-color btn-rounded" type="submit">Eliminar</button>
+                  <button class="btn btn-color btn-rounded" type="submit">Cancelarr</button>
                 </div>
               </div>
        
