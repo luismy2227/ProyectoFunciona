@@ -222,6 +222,7 @@
             idCilindraje INTEGER NOT NULL,
             idModelo INTEGER NOT NULL,
             idVersion INTEGER NOT NULL,
+            observaciones VARCHAR(300),
             CONSTRAINT Pk_Vehiculo_idVehiculo PRIMARY KEY (idVehiculo),
             CONSTRAINT Fk_Marca_idMarca FOREIGN KEY (idMarca) REFERENCES tbl_Marca (idMarca)
             ON DELETE NO ACTION
