@@ -1,9 +1,33 @@
 <!DOCTYPE html>
+<?php
+  include("class/class-conexion.php");
+  $conexion = new Conexion();
+  //Obteniendo las marcas
+  $query = "SELECT idMarca, descripcion FROM tbl_Marca ORDER BY descripcion;";
+  $resMarcas = $conexion->ejecutarConsulta($query);
+
+  //Obteniendo las transmisiones
+  $query = "SELECT idTransmision, descripcion FROM tbl_Transmision ORDER BY descripcion;";
+  $resTransmision = $conexion->ejecutarConsulta($query);
+
+  //Obteniendo los tipos de gasolina
+  $query = "SELECT idTipoGasolina, descripcion FROM tbl_TipoGasolina ORDER BY descripcion;";
+  $resGasolina = $conexion->ejecutarConsulta($query);
+
+   //Obteniendo los tipos de cilindraje
+  $query = "SELECT idCilindraje, descripcion FROM tbl_Cilindraje ORDER BY descripcion;";
+  $resCilindraje = $conexion->ejecutarConsulta($query);
+
+  //Obteniendo los tipos de estado
+  $query = "SELECT idEstado, descripcion FROM tbl_Estado;";
+  $resEstado = $conexion->ejecutarConsulta($query);
+
+?>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Serenity - Modern bootstrap website template</title>
+  <title>RENTCAR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -24,27 +48,20 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-  <!-- =======================================================
-    Theme Name: Serenity
-    Theme URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+  
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
   <header>
-    <!-- Navbar
-    ================================================== -->
+    
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <!-- logo -->
+          
           <a class="brand logo" href="index.html">
 			<img src="assets/img/logo.png" alt="" />
 			</a>
-          <!-- end logo -->
-          <!-- top menu -->
+          
           <div class="navigation">
             <nav>
               <ul class="nav topnav">
@@ -91,37 +108,31 @@
               </ul>
             </nav>
           </div>
-          <!-- end menu -->
+          
         </div>
       </div>
     </div>
+
   </header>
-  <!-- Subhead
-================================================== -->
+  
   <section id="subintro">
     <div class="jumbotron subhead" id="overview">
       <div class="container">
         <div class="row">
           <div class="span12">
             <div class="centered">
-             
+              <h3>Registro de Vehículo</h3>
+              <p>
+                Llena la información solicitada del vehículo adquirido, para ponerlo disponible a la venta o renta.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="breadcrumb">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <ul class="breadcrumb notop">
-           
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  
+
   <section id="maincontent">
     <div class="container">
       <div class="row">
@@ -137,57 +148,101 @@
 
           <form action="" method="post" role="form" class="contactForm">
             <div class="row">
+              
               <div class="span4 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="idVehiculo" data-rule="minlen:4" data-msg="Porfavor Ingrese id" />
-                <div class="validation"></div>
+                <!-- Combobox de marcas-->
+                <div> 
+                  <select id="cbx_Marca" name="cbx_Marca">
+                    <option value='0'>Selecciona una marca</option>
+                    <?php while($rowMarcas = pg_fetch_array($resMarcas)) { ?>
+                    <option value="<?php echo $rowMarcas[0]; ?>" ><?php echo $rowMarcas[1]; ?> </option>
+                    <?php } ?>
+                  </select>
+                </div>
+                <!-- Combobox de modelos-->
+                  <div>
+                    <select id="cbx_Modelo" name="cbx_Modelo"></select>
+                  </div>
+                  <!-- Combobox de versiones-->
+                  <div>
+                    <select id="cbx_Version" name="cbx_Version"></select>
+                  </div>
+                <!-- Combobox de transmisiones-->
+                <div> 
+                  <select id="cbx_Transmisiones" name="cbx_Transmisiones">
+                    <option value='0'>Transmisión</option>
+                    <?php while($rowTransmision = pg_fetch_array($resTransmision)) { ?>
+                    <option value="<?php echo $rowTransmision[0]; ?>" ><?php echo $rowTransmision[1]; ?> </option>
+                    <?php } ?>
+                  </select>
+                </div>
+
+                <!-- Combobox de gasolinas-->
+                <div> 
+                  <select id="cbx_Gasolinas" name="cbx_Gasolinas">
+                    <option value='0'>Combustible</option>
+                    <?php while($rowGasolina = pg_fetch_array($resGasolina)) { ?>
+                    <option value="<?php echo $rowGasolina[0]; ?>" ><?php echo $rowGasolina[1]; ?> </option>
+                    <?php } ?>
+                  </select>
+                </div>
+
+                <!-- Combobox de cilindrajes-->
+                <div> 
+                  <select id="cbx_Cilindraje" name="cbx_Cilindraje">
+                    <option value='0'>Número de cilindros</option>
+                    <?php while($rowCilindros = pg_fetch_array($resCilindraje)) { ?>
+                    <option value="<?php echo $rowCilindros[0]; ?>" ><?php echo $rowCilindros[1]; ?> </option>
+                    <?php } ?>
+                  </select>
+                </div>
+
+                <!-- Combobox de estados-->
+                <div> 
+                  <select id="cbx_Estado" name="cbx_Estado">
+                    <option value='0'>Estado</option>
+                    <?php while($rowEstado = pg_fetch_array($resEstado)) { ?>
+                    <option value="<?php echo $rowEstado[0]; ?>" ><?php echo $rowEstado[1]; ?> </option>
+                    <?php } ?>
+                  </select>
+                </div>
+
+                <!-- Combobox de si se vende-->
+                <div> 
+                  <select id="cbx_SeVende" name="cbx_SeVende">
+                    <option value='0'>Venta</option>
+                    <option value='1'>Si</option>
+                    <option value='2'>No</option>
+                  </select>
+                </div>
+
               </div>
 
               <div class="span4 form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Marca" data-rule="email" data-msg="Porfafor Ingrese Email" />
+                <input type="text" class="form-control" name="text_Color" id="text_Color" placeholder="Color" data-rule="minlen:4" data-msg="Ingrese Color" />
+                <div class="validation"></div>
+              </div>
+              
+              <div class="span4 form-group">
+                <input type="text" class="form-control" name="text_Placa" id="text_Placa" placeholder="Placa" data-rule="minlen:4" data-msg="Ingrese la Placa" />
+                <div class="validation"></div>
+              </div>
+              
+              <div class="span4 form-group">
+                <input type="text" class="form-control" name="text_Anio" id="text_Anio" placeholder="Año" data-rule="minlen:4" data-msg="Ingrese el Año" />
                 <div class="validation"></div>
               </div>
               <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="color" data-rule="minlen:4" data-msg="Porfavor ingrese Color" />
+                <input type="text" class="form-control" name="text_Generacion" id="text_Generacion" placeholder="Generación" data-rule="minlen:4" data-msg="Ingrese la Generacion" />
                 <div class="validation"></div>
               </div>
               <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Modelo" data-rule="minlen:4" data-msg="Porfavor ingrese Modelo" />
+                <input type="text" class="form-control" name="text_Serie" id="text_Serie" placeholder="Número de Serie" data-rule="minlen:4" data-msg="Ingrese Serie" />
                 <div class="validation"></div>
               </div>
               <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Placa" data-rule="minlen:4" data-msg="Porfavor ingrese Placa" />
+                <input type="text" class="form-control" name="subject" id="subtext_TipoMotorject" placeholder="Tipo de motor" data-rule="minlen:4" data-msg="Seleccione el Tipo de Motor" />
                 <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Version" data-rule="minlen:4" data-msg="Porfavor ingrese Version" />
-                <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Año" data-rule="minlen:4" data-msg="Porfavor ingrese el Año" />
-                <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Generacion" data-rule="minlen:4" data-msg="Porfavor ingrese la Generacion" />
-                <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Serie_vin" data-rule="minlen:4" data-msg="Porfavor ingrese Serie_vin" />
-                <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="TipoMotor" data-rule="minlen:4" data-msg="Porfavor ingrese TipoMotor" />
-                <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Transmision" data-rule="minlen:4" data-msg="Porfavor ingrese la Transmision" />
-                <div class="validation"></div>
-              </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="TipoGasolina" data-rule="minlen:4" data-msg="Porfavor ingrese el TipoGasolina" />
-                <div class="validation"></div>
-              </div>
-              <div>
-
               </div>
               <div class="container">
                <div class="col-md-4">
@@ -203,10 +258,7 @@
                    
                   </div>
                 </div>
-              <div class="span4 form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder= "Fecha Registro DD/MM/YYYY" data-rule="minlen:4" data-msg="Porfavor ingrese fecha" />
-                <div class="validation"></div>
-              </div>
+              
                <div class="span4 form-group">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder= "Fecha Adquisicion DD/MM/YYYY" data-rule="minlen:4" data-msg="Porfavor ingrese fecha" />
                 <div class="validation"></div>
@@ -243,8 +295,31 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="assets/js/custom.js"></script>
+  <!--Combobox dependientes-->
+  <script language="javascript">
+      $(document).ready(function(){
+        $("#cbx_Marca").change(function () {
+        $('#cbx_Version').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');     
+        $("#cbx_Marca option:selected").each(function () {
+          idMarca = $(this).val();
+          $.post("includes/get-Modelos.php", { idMarca: idMarca }, function(data){
+            $("#cbx_Modelo").html(data);
+          });            
+        });
+      })
+    });
 
-
+      $(document).ready(function(){
+        $("#cbx_Modelo").change(function () {     
+        $("#cbx_Modelo option:selected").each(function () {
+          idModelo = $(this).val();
+          $.post("includes/get-Versiones.php", { idModelo: idModelo }, function(data){
+            $("#cbx_Version").html(data);
+          });            
+        });
+      })
+    });
+  </script>
 </body>
 
 </html>
