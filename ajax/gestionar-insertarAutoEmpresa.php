@@ -172,7 +172,7 @@
       $aux=0;
     }
     if($seRenta==1){
-      $aux1=T1;
+      $aux1=1;
     }
     else{
       $aux1=0;
