@@ -11,6 +11,9 @@ $(function () {
         success:function(respuesta){
             //alert("Entré aquí 3");
             alert(respuesta[0]);
+            if(respuesta [0]=="Usuario y contraseña correctos") {
+                window.location='index.php';
+            }
             console.log(respuesta[0]);
         }
     });
