@@ -144,17 +144,26 @@
     $respuesta="Seleccione si se vende";
   }
 
-  else if(is_null($precioVenta) OR $precioVenta==""){
-    $respuesta="Ingrece el precio de venta";
+  else if((is_null($precioVenta) OR $precioVenta=="") AND $precioVenta!=0){
+    $respuesta="Precio de venta inválido";
   }
 
   else if($seRenta==0){
     $respuesta="Seleccione si se renta";
   }
 
+  else if((is_null($precioRenta) OR $precioRenta=="") AND $precioRenta!=0){
+    $respuesta="Precio de renta inválido";
+  }
+
   else if($estadoMatricula==0){
     $respuesta="Seleccione el estado del pago de matrícula";
   }
+
+  else if((is_null($montoMatricula) OR $montoMatricula=="") AND $montoMatricula!=0){
+    $respuesta="Monto de matrícula inválido";
+  }
+
   else if($sucursal==0){
     $respuesta="Seleccione la sucursal";
   }
