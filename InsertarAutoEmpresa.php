@@ -21,6 +21,30 @@
   //Obteniendo los tipos de estado
   $query = "SELECT idEstado, descripcion FROM tbl_Estado;";
   $resEstado = $conexion->ejecutarConsulta($query);
+
+  $query = "SELECT idSucursal, descripcion FROM tbl_Sucursal ORDER BY descripcion;";
+  $resSucursal = $conexion->ejecutarConsulta($query);
+
+  /*$msg="";
+  $idVehiculo =0;
+  $idFoto =0;
+  if(isset($_POST['upload'])){
+    $target = "uploaded/".basename($_FILES['image']['name']);
+    $image = $_FILES['image']['name'];
+
+    $query ="SELECT MAX(idVehiculo) FROM tbl_Vehiculo;";
+    $idVehiculo = ($conexion -> ejecutarConsulta($query)) + 1;
+    $query ="SELECT MAX(idFoto) FROM tbl_Foto;";
+    $idFoto = ($conexion -> ejecutarConsulta($query)) + 1;
+
+    if(move_uploaded_file(($_FILES['image']['tmp_name']), $target)){
+      $msg = "Se subió exitosamente la imagen";
+    }else{
+      $msg="Se produjo un error al subir la imagen";
+    }
+    $query = "INSERT INTO tbl_Foto (idFoto, rutaFoto, idVehiculo) VALUES('$idFoto', '$target', '$idVehiculo');";
+    $conexion->ejecutarConsulta($query);
+  }*/
 ?>
 
 <html lang="en">
@@ -49,6 +73,7 @@
   </head>
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
     <header>
+      <!--Nav bar-->
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
@@ -130,7 +155,7 @@
                     <div class="spacer30"></div>
                       <div id="sendmessage">Your message has been sent. Thank you!</div>
                       <div id="errormessage"></div>
-                        <form action="" method="post" role="form" class="contactForm">
+                        <form action="" id="Form_InsertarAutoEmpresa" name="Form_InsertarAutoEmpresa" method="post" role="form" class="contactForm">
                           <div class="row">
                             <div class="span4 form-group">
 
@@ -222,6 +247,7 @@
                             </select>
 
                             <input type="text" class="form-control" name="text_MontoMatricula" id="text_MontoMatricula" placeholder="Monto de matrícula" data-rule="minlen:4" data-msg="Monto de matrícula" />
+
                           </div>
 
                           <div class="span4 form-group">
@@ -235,7 +261,7 @@
                           </div>
 
                           <div class="span4 form-group">
-                            <input type="text" class="form-control" name="text_Anio" id="text_Anio" placeholder="Año" data-rule="minlen:4" data-msg="Campo requerido: Año" />
+                            <input type="text" class="form-control" name="text_Anio" id="text_Anio" placeholder="Año (YYYY/MM/DD)" data-rule="minlen:4" data-msg="Campo requerido: Año" />
                             <div class="validation"></div>
                           </div>
                           <div class="span4 form-group">
@@ -252,31 +278,66 @@
                           </div>
                           <div class="container">
                             <div class="span4 form-group">
+                              <input type="text" class="form-control" name="text_FechaAdquisicion" id="text_FechaAdquisicion" placeholder= "Fecha de Adquisicion (YYYY/MM/DD)" data-rule="minlen:4" data-msg="Campo requerido: Fecha de adquisición" />
+                              <div class="validation"></div>
+
+                              <input type="text" class="form-control" name="text_Seguro" id="text_Seguro" placeholder= "Monto Asegurado" data-rule="minlen:4" data-msg="Campo requerido: Monto asegurado" />
+                              <div class="validation"></div>
+
+                              <!-- Combobox de sucursales-->
+                              <div> 
+                                <select id="cbx_Sucursal" name="cbx_Sucursal">
+                                  <option value='0'>Selecciona una sucursal</option>
+                                  <?php while($rowSucursal = pg_fetch_array($resSucursal)) { ?>
+                                  <option value="<?php echo $rowSucursal[0]; ?>" ><?php echo $rowSucursal[1]; ?> </option>
+                                  <?php } ?>
+                                </select>
+                              </div>
+
+                               <!-- Combobox de garages-->
+                              <div>
+                                  <select id="cbx_Garage" name="cbx_Garage"></select>
+                              </div>
+                            </div>
+
+
+                            <div class="span4 form-group">
                               <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
+
+                                <!--div class="card mb-4 box-shadow">
                                   <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22288%22%20height%3D%22226%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20288%20226%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_162e9996169%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_162e9996169%22%3E%3Crect%20width%3D%22288%22%20height%3D%22226%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2296.828125%22%20y%3D%22119.2390625%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: : :100px; width: -10%; display: block;">
                                   <div class="card-body"></div>
                                   <div>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Agregar Foto</button>
                                   </div>                   
-                                </div>
+                                </div-->
                               </div>
                             </div>
-                            <div class="span4 form-group">
-                              <input type="text" class="form-control" name="text_FechaAdquisicion" id="text_FechaAdquisicion" placeholder= "Fecha Adquisicion YYYY//MM/DD" data-rule="minlen:4" data-msg="Campo requerido: Fecha de adquisición" />
-                              <div class="validation"></div>
-                            </div>
                             <div class="span8 form-group">
-                              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Escriba el estado" placeholder="Observaciones"></textarea>
                               <div class="text-center">
-                                <button class="btn btn-color btn-rounded" type="submit">Guardar</button>
-                                <button class="btn btn-color btn-rounded" type="submit">Cancelar</button>
+                                <button class="btn btn-color btn-rounded" id="btn_Guardar" name="btn_Guardar" type="submit">Guardar</button>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </form>
+                    <!--form method="post" enctype="multipart/form-data">
+                      <input type="file" name="file"/><br/><br/>
+                      <input type="submit" name="subirImagen" value="upload"/>
+                    </form-->
+                    <!--div id ="content">
+                      <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="size" value="1000000">
+                        <div>
+                          <input type="file" name="image">
+                        </div>
+                        <div>
+                          <input type="submit" name="upload" value="Subir imagen">
+                        </div>
+                      </form>
+                    </div--> 
+                    <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location='login.php';">Cancelar</button>
                   </div>
                 </div>
               </div>
@@ -305,6 +366,10 @@
 
     <!-- Template Custom JavaScript File -->
     <script src="assets/js/custom.js"></script>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/insertarAutoEmpresa.js"></script>
+
     <!--Combobox dependientes-->
     <script language="javascript">
       //Combobox de modelos
@@ -331,6 +396,19 @@
           });
         })
       });
+
+      //Combobox de garages
+      $(document).ready(function(){
+        $("#cbx_Sucursal").change(function () {     
+          $("#cbx_Sucursal option:selected").each(function () {
+            idSucursal = $(this).val();
+            $.post("includes/get-Sucursales.php", { idSucursal: idSucursal }, function(data){
+              $("#cbx_Garage").html(data);
+            });            
+          });
+        })
+      });
     </script>
+    
   </body>
 </html>

@@ -15,7 +15,7 @@
 		IN pn_idVersion			INTEGER,
 
 		IN pd_fechaAdquisicion	DATE,
-		IN pn_idSeguro			INTEGER,
+		IN pn_montoAsegurado	DECIMAL(10,2),
 		IN pn_idEstado			INTEGER,
 		IN pn_precioVenta		DECIMAL(10,2),
 		IN pn_precioRenta		DECIMAL(10,2),
@@ -36,6 +36,7 @@
 			auxiliarVehiculo2   	INTEGER DEFAULT 0;
 			vb_OcurreErrorVehiculo	BOOLEAN;
 			vc_MensajeVehiculo		VARCHAR(2000);
+			auxiliarSeguro		INTEGER DEFAULT 0;
 		BEGIN
 			pbOcurreErrorEmpresa:=TRUE;
 			temMensaje := '';
@@ -46,9 +47,9 @@
 				temMensaje := CONCAT(temMensaje,'fecha adquisicion, ');
 			END IF;
 
-			--Comprobando que la pn_idSeguro no sea null:
-			IF pn_idSeguro IS NULL THEN
-				RAISE NOTICE 'id seguro no puede ser un campo vacío';
+			--Comprobando que la pn_montoAsegurado no sea null:
+			IF pn_montoAsegurado IS NULL THEN
+				RAISE NOTICE 'Seguro no puede ser un campo vacío';
 				temMensaje := CONCAT(temMensaje,'idSeguro, ');
 			END IF;
 
@@ -110,11 +111,15 @@
 			END IF;
 
 			-- Insertando:
+			SELECT MAX(idSeguro) INTO auxiliarSeguro FROM tbl_Seguro;
+			INSERT INTO tbl_Seguro (idSeguro, estado, descripcion, montoAsegurado, fechaInicio, fechaFin)
+			VALUES(auxiliarSeguro+1, 'A', 'Seguro Completo', pn_montoAsegurado, '2017/01/01', '2020/01/01');
+
 			SELECT MAX(idVehiculoEmpresa) INTO auxiliarVehiculo FROM tbl_VehiculoEmpresa; -- Obteniendo el idVehiculo
 			SELECT idVehiculo INTO auxiliarVehiculo2 FROM tbl_Vehiculo WHERE placa = pc_placa;
 			INSERT INTO tbl_VehiculoEmpresa(idVehiculoEmpresa, fechaAdquisicion, idVehiculo, idSeguro, idEstado, 
 			precioVenta, precioRentaHora, seVende, seRenta, estadoMatricula, montoMatricula)
-			VALUES(auxiliarVehiculo+1, pd_fechaAdquisicion, auxiliarVehiculo2,pn_idSeguro, pn_idEstado, 
+			VALUES(auxiliarVehiculo+1, pd_fechaAdquisicion, auxiliarVehiculo2,auxiliarSeguro+1, pn_idEstado, 
 			pn_precioVenta, pn_precioRenta, pb_seVende, pb_seRenta, pc_estadoMatricula, pn_montoMatricula);
 
 			pcMensajeEmpresa := 'Vehiculo Empresa insertado con éxito';

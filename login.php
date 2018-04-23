@@ -72,7 +72,7 @@
     </div>
     </div>
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/metodos.js"></script>
+    <script src="js/login.js"></script>
     <!--script type="text/javascript" srs="metodos.js"></script-->
   </body>
 </html>
