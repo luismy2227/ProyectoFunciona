@@ -71,8 +71,13 @@
 
 
   </head>
+<<<<<<< HEAD
  <body>
   <header>
+=======
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <header>
+>>>>>>> 90bfe67dbf723ff7d7ee2dcb58634a1531f9bed5
     <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-fixed-top">
@@ -82,7 +87,11 @@
           <a class="brand logo" href="index.html"><img src="assets/img/logo.png" alt=""></a>
           <!-- end logo -->
           <!-- top menu -->
+<<<<<<< HEAD
         <div class="navigation">
+=======
+          <div class="navigation">
+>>>>>>> 90bfe67dbf723ff7d7ee2dcb58634a1531f9bed5
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown active">
@@ -140,12 +149,16 @@
               </ul>
             </nav>
           </div>
+          <!-- end menu -->
         </div>
       </div>
     </div>
   </header>
+<<<<<<< HEAD
 
     </header>
+=======
+>>>>>>> 90bfe67dbf723ff7d7ee2dcb58634a1531f9bed5
 
         <section id="subintro">
             <div class="jumbotron subhead" id="overview">
@@ -171,8 +184,6 @@
                 <div class="span4">
                   <div class="span8">
                     <div class="spacer30"></div>
-                      <div id="sendmessage">Your message has been sent. Thank you!</div>
-                      <div id="errormessage"></div>
                         <form action="" id="Form_InsertarAutoEmpresa" name="Form_InsertarAutoEmpresa" method="post" role="form" class="contactForm">
                           <div class="row">
                             <div class="span4 form-group">
@@ -355,7 +366,7 @@
                         </div>
                       </form>
                     </div--> 
-                    <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location='login.php';">Cancelar</button>
+                    <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location='index.php';">Cancelar</button>
                   </div>
                 </div>
               </div>
