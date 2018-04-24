@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Serenity - Modern bootstrap website template</title>
+  <title>RENTCAR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -47,54 +47,32 @@
                   <a href="index.html">Inicio</a>
                 </li>
                 <li class="dropdown">
-                  <a href="#">Features</a>
+                  <a href="#">Vehículos</a>
                   <ul class="dropdown-menu">
-                    <li><a href="overview.html">Overview</a></li>
-                    <li><a href="scaffolding.html">Scaffolding</a></li>
-                    <li><a href="base-css.html">Base CSS</a></li>
-                    <li><a href="components.html">Components</a></li>
-                    <li><a href="javascript.html">Javascripts</a></li>
-                    <li><a href="icons.html">More icons</a></li>
-                    <li class="dropdown"><a href="#">3rd level</a>
-                      <ul class="dropdown-menu sub-menu">
-                        <li><a href="#">Example menu</a></li>
-                        <li><a href="#">Example menu</a></li>
-                        <li><a href="#">Example menu</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="overview.html">Ver Todo</a></li>
+                    <li><a href="scaffolding.html">Renta</a></li>
+                    <li><a href="base-css.html">Venta</a></li>
+                    <li><a href="components.html">Promociones</a></li>
+                    
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#">Pages</a>
+                  <a href="#">Mantenimiento</a>
                   <ul class="dropdown-menu">
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="pricingtable.html">Pricing table</a></li>
-                    <li><a href="fullwidth.html">Fullwidth</a></li>
-                    <li><a href="404.html">404</a></li>
+                    <li><a href="about.html">Servicios</a></li>
+                    <li><a href="pricingtable.html">Repuestos</a></li>
+                  
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#">Blog</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="blog_left_sidebar.html">Blog left sidebar</a></li>
-                    <li><a href="blog_right_sidebar.html">Blog right sidebar</a></li>
-                    <li><a href="post_left_sidebar.html">Post left sidebar</a></li>
-                    <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
-                  </ul>
+                  <a href="#">Sucursales</a>
+                 
                 </li>
                 <li class="dropdown">
-                  <a href="#">Portfolio</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                    <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                    <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                    <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                  </ul>
+                  <a href="contact.html">Contactenos</a>
+                 
                 </li>
                 
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
               </ul>
             </nav>
           </div>
@@ -174,33 +152,33 @@
       <div class="row">
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-suitcase left active"></i>
-          <h4>Responsive bootstrap</h4>
+          <h4>RentCar</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Dolorem adipiscing definiebas ut nec. Dolore consectetuer eu vim, elit molestie ei has, petentium imperdiet in pri mel virtute nam.
+            Una compañia dedicada a ofrecer lo mejor en renta ,venta,mantenimiento de tu vehiculo con nosotros la calidad es una obligacion ven y pruebalo.
           </p>
-          <a href="#">Learn more</a>
+         
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-plane left"></i>
-          <h4>Lot of features</h4>
+          <h4>Venta</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Dolorem adipiscing definiebas ut nec. Dolore consectetuer eu vim, elit molestie ei has, petentium imperdiet in pri mel virtute nam.
+            La venta de vehiculos con nosotros es la mas segura que podras encontrar rentcar te ofrece un mejor servicio a nivel nacional buscanos .
           </p>
-          <a href="#">Learn more</a>
+         
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-leaf left"></i>
-          <h4>Multipurpose template</h4>
+          <h4>Renta Vehiculo</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Dolorem adipiscing definiebas ut nec. Dolore consectetuer eu vim, elit molestie ei has, petentium imperdiet in pri mel virtute nam.
+            Nuestro servicio de renta de vehiculo es el mejor a nivel  nacional porque nosotros te ofrecemos el mejor servicio Rentcar tu mejor opcion.
           </p>
-          <a href="#">Learn more</a>
+         
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-wrench left"></i>
@@ -210,55 +188,35 @@
           <p class="left">
             Encargados de brindar el mejor servicio en todo el pais ven a conocernos nosotros somos los mejores en lo que hacemos quieres calidad busca rentcar.
           </p>
-          <a href="#">Leer Mas</a>
+         
         </div>
       </div>
-      <div class="row">
-        <div class="span12">
-          <div class="tagline centered">
-            <div class="row">
-              <div class="span12">
-                <div class="tagline_text">
-                  <h2>Don't miss this special offer for limited time only!</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, vix ceteros noluisse intellegat ne, ex nec insolens liberavisse, no adhuc causae nominati duo.
-                  </p>
-                </div>
-                <div class="btn-toolbar cta">
-                  <a class="btn btn-large btn-color" href="#">
-							<i class="icon-plane icon-white"></i> Try free version </a>
-                  <a class="btn btn-large btn-inverse" href="#">
-							<i class="icon-shopping-cart icon-white"></i> Buy license </a>
-                </div>
+     
               </div>
             </div>
           </div>
           <!-- end tagline -->
         </div>
       </div>
-      <div class="row">
-        <div class="home-posts">
-          <div class="span12">
-            <h3>Recent blog posts</h3>
+     
+            <!-- end .entry-body -->
+            <div class="clear">
+            </div>
           </div>
           <div class="span3">
             <div class="post-image">
-              <a href="post_right_sidebar.html">
-					<img src="assets/img/dummies/blog1.jpg" alt="">
-					</a>
+             
             </div>
             <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-pencil left"></i></a>
-              <span class="date">Sep 17 <br>
-					2013</span>
+             
             </div>
             <!-- end .entry-meta -->
             <div class="entry-body">
               <a href="post_right_sidebar.html">
-                <h5 class="title">This is a standard post</h5>
+                <h5 class="title"></h5>
               </a>
               <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.
+               
               </p>
             </div>
             <!-- end .entry-body -->
@@ -267,40 +225,18 @@
           </div>
           <div class="span3">
             <div class="post-image">
-              <a href="#"><img src="assets/img/dummies/blog2.jpg" alt=""></a>
+         
             </div>
             <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-pencil left"></i></a>
-              <span class="date">Sep 17 2013</span>
+            
             </div>
             <!-- end .entry-meta -->
             <div class="entry-body">
-              <a href="post_right_sidebar.html">
-                <h5 class="title">Example post image format</h5>
+            
+                <h5 class="title">t</h5>
               </a>
               <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.
-              </p>
-            </div>
-            <!-- end .entry-body -->
-            <div class="clear">
-            </div>
-          </div>
-          <div class="span3">
-            <div class="post-image">
-              <a href="#"><img src="assets/img/dummies/blog2.jpg" alt=""></a>
-            </div>
-            <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-facetime-video left"></i></a>
-              <span class="date">Sep 17 2011</span>
-            </div>
-            <!-- end .entry-meta -->
-            <div class="entry-body">
-              <a href="post_right_sidebar.html">
-                <h5 class="title">Amazing video post format</h5>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
+              
               </p>
             </div>
             <!-- end .entry-body -->
@@ -309,34 +245,16 @@
           </div>
           <div class="span3">
             <div class="post-slider">
-              <!-- start flexslider -->
-              <div class="flexslider">
-                <ul class="slides">
-                  <li>
-                    <a href="post_right_sidebar.html"><img src="assets/img/dummies/work1.jpg" alt=""></a>
-                  </li>
-                  <li>
-                    <a href="post_right_sidebar.html"><img src="assets/img/dummies/work2.jpg" alt=""></a>
-                  </li>
-                  <li>
-                    <a href="post_right_sidebar.html"><img src="assets/img/dummies/work3.jpg" alt=""></a>
-                  </li>
-                </ul>
-              </div>
+             
               <!-- end flexslider -->
             </div>
             <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-picture left"></i></a>
-              <span class="date">Sep 17 2011</span>
+              
+              <span class="date"></span>
             </div>
             <!-- end .entry-meta -->
             <div class="entry-body">
-              <a href="post_right_sidebar.html">
-                <h5 class="title">Slider post format with flexslider</h5>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
-              </p>
+              
             </div>
             <!-- end .entry-body -->
           </div>
@@ -351,40 +269,18 @@
       <div class="row">
         <div class="span4">
           <div class="widget">
-            <h5>Browse pages</h5>
-            <ul class="regular">
-              <li><a href="#">Work for us</a></li>
-              <li><a href="#">Creative process</a></li>
-              <li><a href="#">Case study</a></li>
-              <li><a href="#">Scaffold awwards</a></li>
-              <li><a href="#">Meet the team</a></li>
-            </ul>
+           
           </div>
         </div>
         <div class="span4">
           <div class="widget">
-            <h5>Recent blog posts</h5>
-            <ul class="regular">
-              <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-              <li><a href="#">Mea malis nominavi insolens ut</a></li>
-              <li><a href="#">Minim timeam has no aperiri sanctus ei mea per pertinax</a></li>
-              <li><a href="#">Te malorum dignissim eos quod sensibus</a></li>
-            </ul>
+            
           </div>
         </div>
         <div class="span4">
           <div class="widget">
-            <!-- logo -->
-            <a class="brand logo" href="index.html">
-							<img src="assets/img/logo-dark.png" alt="">
-						</a>
-            <!-- end logo -->
-            <address>
-							<strong>Registered Companyname, Inc.</strong><br>
-							 8895 Somename Ave, Suite 600<br>
-							 San Francisco, CA 94107<br>
-							<abbr title="Phone">P:</abbr> (123) 456-7890
-						</address>
+                   
+
           </div>
         </div>
       </div>
@@ -394,19 +290,13 @@
         <div class="row">
           <div class="span6">
             <p>
-              &copy; Serenity - All right reserved
+             
             </p>
           </div>
           <div class="span6">
             <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity
-              -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
+              
+             
           </div>
         </div>
       </div>
