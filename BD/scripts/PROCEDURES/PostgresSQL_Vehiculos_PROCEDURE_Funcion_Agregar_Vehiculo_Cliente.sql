@@ -14,7 +14,6 @@
 		IN pn_idModelo			INTEGER,
 		IN pn_idVersion			INTEGER,
 
-		IN pd_fechaRegistro		DATE,
 		IN pn_clientePertence	INTEGER,
 
 		OUT pbOcurreErrorCliente 		BOOLEAN,
@@ -33,12 +32,6 @@
 			pbOcurreErrorCliente:=TRUE;
 			temMensaje := '';
 
-			--Comprobando que la pd_fechaRegistro no sea null:
-			IF pd_fechaRegistro IS NULL THEN
-				RAISE NOTICE 'la FECHA DE REGISTRO no puede ser un campo vacío';
-				temMensaje := CONCAT(temMensaje,'fecha registro, ');
-			END IF;
-
 			--Comprobando que la pn_clientePertence no sea null:
 			IF pn_clientePertence IS NULL THEN
 				RAISE NOTICE 'id cliente no puede ser un campo vacío';
@@ -46,7 +39,7 @@
 			END IF;
 
 			IF temMensaje<>'' THEN
-				pcMensajeCliente := CONCAT('Campos requeridos para poder realizar la matrícula:',temMensaje);
+				pcMensajeCliente := CONCAT('Campos requeridos para poder realizar la matrícula: ',temMensaje);
 				RETURN;
 			END IF;
 
@@ -61,10 +54,10 @@
 			END IF;
 
 			-- Insertando:
-			SELECT MAX(idVehiculoCliente) INTO auxiliarVehiculo FROM tbl_VehiculoCliente; -- Obteniendo el idVehiculo
-			SELECT idVehiculo INTO auxiliarVehiculo2 FROM tbl_Vehiculo WHERE placa = pc_placa;
+			SELECT MAX(idVehiculoCliente) INTO auxiliarVehiculo FROM tbl_VehiculoCliente; -- Obteniendo el idVehiculoCliente
+			SELECT idVehiculo INTO auxiliarVehiculo2 FROM tbl_Vehiculo WHERE placa = pc_placa; --Obteniendo el idVehiculo
 			INSERT INTO tbl_VehiculoCliente(idVehiculoCliente, fechaRegistro, idVehiculo, idClientePertenece)
-			VALUES(auxiliarVehiculo+1, pd_fechaRegistro, auxiliarVehiculo2,pn_clientePertence);
+			VALUES(auxiliarVehiculo+1, CURRENT_DATE, auxiliarVehiculo2,pn_clientePertence);
 
 			pcMensajeCliente := 'Vehiculo Cliente insertado con éxito';
 			pbOcurreErrorCliente := FALSE;
