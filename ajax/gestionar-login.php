@@ -51,6 +51,13 @@
         $respuesta['mensajeSesion']="No tiene acceso";
       }
       break;
+      case "logout":
+        session_start();
+        $_SESSION['status']=false;
+        $respuesta="Cerró sesión";
+        $respuesta['loggedin']=0;
+        $respuesta['mensajeSesion']="No tiene acceso";
+        break;
   }
   
   echo json_encode($respuesta);

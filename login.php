@@ -1,9 +1,9 @@
-<?php
+<!--?php
   session_start();
   if(isset($_SESSION["status"])==true){
     header("Location: index.php");
   }
-?>
+?-->
 <!DOCTYPE html>
 <html>
 <html lang="en">
