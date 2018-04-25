@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(isset($_SESSION["status"])==false){
+    session_destroy();
+    header("Location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -296,7 +303,17 @@
           <div class="span6">
             <div class="credits">
               
-             
+             <li>
+                
+                  <p>
+                    <?php  
+                      if(isset($_SESSION["status"])==true){
+                        echo $_SESSION["nombre"];
+                      } ?> 
+                  </p> 
+                
+
+             </li>
           </div>
         </div>
       </div>

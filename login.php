@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION["status"])==true){
+    header("Location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <html lang="en">
@@ -58,7 +64,7 @@
           </div>
           <div class="input-group">
             <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-            <input type="password" id="text_Venta" name="text_contrasena" class="form-control" placeholder="Precio de venta">
+            <input type="password" id="text_contrasena" name="text_contrasena" class="form-control" placeholder="Precio de venta">
           </div>
           <label class="checkbox">
             <input type="checkbox" value="remember-me"> Recordarme
