@@ -26,79 +26,57 @@
 
     </head>
     <body data-spy="scroll" data-target=".bs-docs-sidebar">
-        <header>
-            <!-- Navbar
-            ================================================== -->
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <!-- logo -->
-                        <a class="brand logo" href="index.html"><img src="assets/img/logo.png" alt=""></a>
-                        <!-- end logo -->
-                        <!-- top menu -->
-                        <div class="navigation">
-                            <nav>
-                                <ul class="nav topnav">
-                                    <li class="dropdown active">
-                                        <a href="index.html">Inicio</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Features</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="overview.html">Overview</a></li>
-                                            <li><a href="scaffolding.html">Scaffolding</a></li>
-                                            <li><a href="base-css.html">Base CSS</a></li>
-                                            <li><a href="components.html">Components</a></li>
-                                            <li><a href="javascript.html">Javascripts</a></li>
-                                            <li><a href="icons.html">More icons</a></li>
-                                            <li class="dropdown"><a href="#">3rd level</a>
-                                                <ul class="dropdown-menu sub-menu">
-                                                    <li><a href="#">Example menu</a></li>
-                                                    <li><a href="#">Example menu</a></li>
-                                                    <li><a href="#">Example menu</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="about.html">About us</a></li>
-                                            <li><a href="pricingtable.html">Pricing table</a></li>
-                                            <li><a href="fullwidth.html">Fullwidth</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Blog</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="blog_left_sidebar.html">Blog left sidebar</a></li>
-                                            <li><a href="blog_right_sidebar.html">Blog right sidebar</a></li>
-                                            <li><a href="post_left_sidebar.html">Post left sidebar</a></li>
-                                            <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Portfolio</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                                            <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                                            <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                                            <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- end menu -->
-                    </div>
-                </div>
-            </div>
-        </header>
+         <header>
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- logo -->
+          <a class="brand logo" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+          <!-- end logo -->
+          <!-- top menu -->
+          <div class="navigation">
+            <nav>
+              <ul class="nav topnav">
+                <li class="dropdown active">
+                  <a href="index.html">Inicio</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Vehículos</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="overview.html">Ver Todo</a></li>
+                    <li><a href="scaffolding.html">Renta</a></li>
+                    <li><a href="base-css.html">Venta</a></li>
+                    <li><a href="components.html">Promociones</a></li>
+                    
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Mantenimiento</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="about.html">Servicios</a></li>
+                    <li><a href="pricingtable.html">Repuestos</a></li>
+                  
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Sucursales</a>
+                 
+                </li>
+                <li class="dropdown">
+                  <a href="contact.html">Contactenos</a>
+                 
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+          <!-- end menu -->
+        </div>
+      </div>
+    </div>
+  </header>
 
         <section id="subintro">
             <div class="jumbotron subhead" id="overview">
@@ -125,7 +103,7 @@
                         <div class="span8">
                             <div class="spacer30"></div>
 
-                            <form action="" id="Form_InsertarCliente" name="Form_InsertarCliente" method="post" role="form" class="contactForm">
+                            <form action="" id="Form_InsertarEmpleado" name="Form_InsertarEmpleado" method="post" role="form" class="contactForm">
                                 <div class="row">
                                     <div class="span4 form-group">
                                          <div class="span4 form-group">
@@ -153,6 +131,10 @@
                 <div class="validation"></div>
                               </div>
                               <div class="span4 form-group">
+                                <input type="text" class="form-control" name="text_Idcargo" id="text_Idcargo" placeholder="Ingrese Id Cargo"  data-rule="minlen:4" data-msg="Porfavor ingrese Id del Cargo" />
+                <div class="validation"></div>
+                <input type="text" class="form-control" name="text_EmpleadoSuperior" id="text_EmpleadoSuperior" placeholder="Ingrese Id EmpleadoSuperior"  data-rule="minlen:4" data-msg="Porfavor ingrese Id Empleado Superior" />
+                <div class="validation"></div>
                               <select type="text" id="cbx_SeleccioneGenero" name="cbx_SeleccioneGenero" class="form-control" placeholder="Seleccione Genero"  data-rule="minlen:4" data-msg="Seleccione un Genero">
                                   <option value='0'>Seleccione un Genero</option>
                                   <option value='1'>Femenino</option>
@@ -170,7 +152,9 @@
                                <input type="text" class="form-control" name="text_SegundoApellido" id="text_SegundoApellido" placeholder="Segundo Apellido" data-rule="minlen:4" data-msg="SegundoApellido" />
                                  <input type="text" class="form-control" name="text_Identidad" id="text_Identidad" placeholder="Ingrese el Identidad"  data-rule="minlen:4" data-msg="Porfavor ingrese Identidad" />
                 <div class="validation"></div>
-                                       <input type="text" class="form-control" name="text_Rtn" id="text_Rtn" placeholder="Ingrese el RTN"  data-rule="minlen:4" data-msg="Porfavor ingrese Identidad" />
+                                       <input type="text" class="form-control" name="text_FechaContratacion" id="text_FechaContratacion" placeholder="Ingrese Fecha Contratacion"  data-rule="minlen:4" data-msg="Porfavor ingrese Fecha Contratacion" />
+                <div class="validation"></div>
+                 <input type="text" class="form-control" name="text_FechaPromocion" id="text_FechaPromocion" placeholder="Ingrese Fecha Promocion"  data-rule="minlen:4" data-msg="Porfavor ingrese Fecha Promocion" />
                 <div class="validation"></div>
                  <input type="text" class="form-control" name="text_Imagenruta" id="text_Imagenruta" placeholder="Ingrese la imagen"  data-rule="minlen:4" data-msg="Porfavor ingrese Identidad" />
                 <div class="validation"></div>
@@ -199,6 +183,7 @@
                                 <div class="span8 form-group">
                                     <div class="text-center">
                                         <button class="btn btn-color btn-rounded" id="btn_Guardar" name="btn_Guardar" type="submit">Guardar</button>
+                                      <div class="validation"></div>
                                     </div>
                                 </div>
                         </div>
@@ -236,7 +221,7 @@
 <script src="assets/js/custom.js"></script>
 
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/insertarCliente.js"></script>
+<script src="js/insertarEmpleado.js"></script>
 
 <!--Combobox dependientes-->
 <script language="javascript">
