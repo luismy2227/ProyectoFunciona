@@ -34,7 +34,7 @@
 
 			SELECT COUNT(*) INTO vn_existeUsuario FROM tbl_Usuario
 			INNER JOIN tbl_Empleado ON tbl_Empleado.idUsuario = tbl_Usuario.idUsuario
-			WHERE nombreUsuario = pc_usuario;
+			WHERE tbl_Usuario.nombreUsuario = pc_usuario;
 
 			IF vn_existeUsuario = 0 THEN
 				pcMensaje := CONCAT('No existe el usuario ',pc_usuario);
@@ -44,7 +44,7 @@
 			IF vn_existeUsuario = 1 THEN
 				SELECT COUNT(*) INTO vn_existePassword FROM tbl_Usuario
 				INNER JOIN tbl_Empleado ON tbl_Empleado.idUsuario = tbl_Usuario.idUsuario
-				WHERE nombreUsuario = pc_usuario AND userPassword = pc_userPassword;
+				WHERE tbl_Usuario.nombreUsuario = pc_usuario AND tbl_Usuario.userPassword = pc_userPassword;
 
 				IF vn_existePassword <> 1 THEN
 					pcMensaje := 'Password incorrecta';
