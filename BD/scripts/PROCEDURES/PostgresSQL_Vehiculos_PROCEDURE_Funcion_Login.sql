@@ -33,6 +33,7 @@
 			END IF;
 
 			SELECT COUNT(*) INTO vn_existeUsuario FROM tbl_Usuario
+			INNER JOIN tbl_Empleado ON tbl_Empleado.idUsuario = tbl_Usuario.idUsuario
 			WHERE nombreUsuario = pc_usuario;
 
 			IF vn_existeUsuario = 0 THEN
@@ -42,6 +43,7 @@
 
 			IF vn_existeUsuario = 1 THEN
 				SELECT COUNT(*) INTO vn_existePassword FROM tbl_Usuario
+				INNER JOIN tbl_Empleado ON tbl_Empleado.idUsuario = tbl_Usuario.idUsuario
 				WHERE nombreUsuario = pc_usuario AND userPassword = pc_userPassword;
 
 				IF vn_existePassword <> 1 THEN

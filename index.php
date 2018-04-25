@@ -75,17 +75,14 @@
                   <a href="#">Sucursales</a>
                  
                 </li>
-                <li class="dropdown">
-                  <a href="contact.html">Contactenos</a>
-                 
-                </li>
-              <li>
+              <li class="dropdown" >
+                <a>
                 <?php
                   if(isset($_SESSION["status"])==true){
                     $boton ="<button class=\"btn btn-primary btn-lg btn-block\" id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\" type=\"submit\" >Cerrar Sesión</button>";
                     echo $boton;
                   }
-                ?>
+                ?></a>
               </li>
                 
               </ul>
@@ -311,17 +308,18 @@
           <div class="span6">
             <div class="credits">
               
-             <li>
-                
+                            
                   <p>
+                    
                     <?php  
                       if(isset($_SESSION["status"])==true){
                         echo $_SESSION["nombre"];
                       } ?> 
-                  </p> 
+                  </p>
+                    
                 
 
-             </li>
+            
           </div>
         </div>
       </div>
@@ -346,7 +344,7 @@
   <!-- Template Custom JavaScript File -->
   <script src="assets/js/custom.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/logout.js"></script>
 
 </body>
 </html>

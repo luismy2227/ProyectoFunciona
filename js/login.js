@@ -17,8 +17,9 @@ $(document).on("submit","#Login",function(event){
         //data:$(this).serialize(),
         success:function(respuesta){
             alert("Entré aquí 3");
-            alert(respuesta);
-            if(respuesta=="Usuario y contraseña correctos") {
+            alert(respuesta[0]);
+            alert(respuesta.mensajeSesions);
+            if(respuesta[0]=="Usuario y contraseña correctos") {
                 window.location='index.php';
             }
             console.log(respuesta);
@@ -27,26 +28,3 @@ $(document).on("submit","#Login",function(event){
   });
 });
 
-$("#btn_Logout").click(function(){
-    alert("Entre a logout");
-    $.ajax({
-        type:"POST",
-        url:"ajax/gestionar-login.php",
-        dataType:"JSON",
-        data:{
-            "accion":"logout",
-        },
-        //data:$(this).serialize(),
-        success:function(respuesta){
-            alert("Entré aquí 3");
-            alert(respuesta);
-            if(respuesta.loggedin==0){
-                window.location.href = "index.php";
-            }
-            console.log(respuesta);
-        },
-            error:function(e){
-                console.log(e);
-            }
-    });
-});
