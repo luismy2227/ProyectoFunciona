@@ -75,6 +75,7 @@
                   <a href="#">Sucursales</a>
                  
                 </li>
+                
                 <?php
                   if(isset($_SESSION["status"])==true){
                     $boton ="<li><a  id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\">Cerrar Sesión</a></li>";
@@ -113,9 +114,9 @@
                     <div class="info animate-in">
                       <h2>Rent Car</h2>
                       <br>
-                      <h3>Mas que una Coorporacion</h3>
+                      <h3>Más que una Coorporacion</h3>
                       <p>
-                        Ven Atrevete a disfrutar una experiencia diferente.
+                        Ven, Atrevete a disfrutar una experiencia diferente.
                       </p>
                      
                     </div>
@@ -139,7 +140,7 @@
                     <div class="info">
                       <h2>Contamos con los mejores autos</h2>
                       <br>
-                      <h3>Lo ultimo en tecnologia </h3>
+                      <h3>Lo último en tecnologia </h3>
                       <p>
                         Porque nosotros somos tu opcion atrevete 
                       </p>
@@ -161,31 +162,31 @@
       <div class="row">
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-suitcase left active"></i>
-          <h4>RentCar</h4>
+          <h4>RENTCAR</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Una compañia dedicada a ofrecer lo mejor en renta ,venta,mantenimiento de tu vehiculo con nosotros la calidad es una obligacion ven y pruebalo.
+            Una compañía dedicada a ofrecer lo mejor en renta ,venta y mantenimiento de tu vehículo, con nosotros la calidad es una obligación, ven y pruébalo.
           </p>
          
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-plane left"></i>
-          <h4>Venta</h4>
+          <h4>Venta de vehículos</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            La venta de vehiculos con nosotros es la mas segura que podras encontrar rentcar te ofrece un mejor servicio a nivel nacional buscanos .
+            La venta de vehículos con nosotros es la más segura que podrás encontrar, RENTCAR te ofrece un mejor servicio a nivel nacional, buscanos.
           </p>
          
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-leaf left"></i>
-          <h4>Renta Vehiculo</h4>
+          <h4>Renta de vehículos</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Nuestro servicio de renta de vehiculo es el mejor a nivel  nacional porque nosotros te ofrecemos el mejor servicio Rentcar tu mejor opcion.
+            Nuestro servicio de renta de vehículos, es el mejor a nivel  nacional, porque nosotros te ofrecemos el mejor servicio, RENTCAR, tu mejor opción.
           </p>
          
         </div>
@@ -195,7 +196,7 @@
           <div class="dotted_line">
           </div>
           <p class="left">
-            Encargados de brindar el mejor servicio en todo el pais ven a conocernos nosotros somos los mejores en lo que hacemos quieres calidad busca rentcar.
+            Encargados de brindar el mejor servicio en todo el país, ven a conocernos, nosotros somos los mejores en lo que hacemos. ¿Quieres calidad? busca RENTCAR.
           </p>
          
         </div>
@@ -303,7 +304,8 @@
             </p>
           </div>
           <div class="span6">
-            <div class="credits">         
+            <div class="credits">
+
               <p> 
                 <?php  
                   if(isset($_SESSION["status"])==true){
@@ -311,6 +313,9 @@
                     echo $mensaje;
                   } ?> 
               </p>
+              <p class="right">
+                  &copy; 2018 RENTCAR. 
+                </p>
           </div>
         </div>
       </div>
