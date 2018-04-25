@@ -75,15 +75,12 @@
                   <a href="#">Sucursales</a>
                  
                 </li>
-              <li class="dropdown" >
-                <a>
                 <?php
                   if(isset($_SESSION["status"])==true){
-                    $boton ="<button class=\"btn btn-primary btn-lg btn-block\" id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\" type=\"submit\" >Cerrar Sesión</button>";
+                    $boton ="<li><a  id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\">Cerrar Sesión</a></li>";
                     echo $boton;
                   }
-                ?></a>
-              </li>
+                ?>
                 
               </ul>
             </nav>
@@ -306,20 +303,13 @@
             </p>
           </div>
           <div class="span6">
-            <div class="credits">
-              
-                            
-                  <p>
-                    
-                    <?php  
-                      if(isset($_SESSION["status"])==true){
-                        echo $_SESSION["nombre"];
-                      } ?> 
-                  </p>
-                    
-                
-
-            
+            <div class="credits">         
+              <p> 
+                <?php  
+                  if(isset($_SESSION["status"])==true){
+                    echo $_SESSION["nombre"];
+                  } ?> 
+              </p>
           </div>
         </div>
       </div>
