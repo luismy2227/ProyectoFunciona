@@ -2,7 +2,7 @@
   session_start();
   if(isset($_SESSION["status"])==false){
     session_destroy();
-    header("Location: login.php");
+    //header("Location: login.php");
   }
 ?>
 <!DOCTYPE html>
@@ -85,6 +85,10 @@
                   if(isset($_SESSION["status"])==true){
                     $boton ="<li><a  id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\">Cerrar Sesión</a></li>";
                     echo $boton;
+                  }
+                  else{
+                    $boton1 ="<li><a  id=\"btn_Log\" name=\"btn_Log\" href=\"login.php\">Iniciar Sesión</a></li>";
+                    echo $boton1;
                   }
                 ?>
                 

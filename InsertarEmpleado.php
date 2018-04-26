@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
   include("class/class-conexion.php");
   $conexion = new Conexion();
   //Obteniendo los cargo
@@ -39,9 +40,15 @@
 
 
 
+=======
+  session_start();
+  if(isset($_SESSION["status"])==false){
+    session_destroy();
+    header("Location: login.php");
+  }
+?>
+>>>>>>> 0b7f509e32b498c1bcf3374d86198be77e0ca1d1
 <!DOCTYPE html>
-
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -152,8 +159,12 @@
                                  <input type="text" class="form-control" name="text_SegundoNombre" id="text_SegundoNombre"  data-rule="minlen:4" placeholder="Segundo Nombre" data-msg="SegundoNombre" />
                                </div>
                                <div class="span4 form-group">
-                                 <input type="text" class="form-control" name="text_Correo" id="text_Correo" placeholder="Ingrese Correo" data-rule="minlen:4" data-msg="Porfavor ingrese Correo"/>
-                <div class="validation"></div>
+                                 <!--input type="text" class="form-control" name="text_Correo" id="text_Correo" placeholder="Ingrese Correo" data-rule="minlen:4" data-msg="Porfavor ingrese Correo"/>
+                <div class="validation"></div-->
+                  <div class="wrap-input100 validate-input m-b-16" data-validate = "Correo Requerido">
+                        <input class="input100" type="email" name="text_Correo" id="text_Correo" placeholder="Correo" required autofocus>
+                        <span class="focus-input100"></span>
+                    </div>
                
                 <input type="text" class="form-control" name="text_Telefono" id="text_Telefono" placeholder="Ingrese Telefono" data-rule="minlen:4" data-msg="Porfavor ingrese Telefono" />
                 <div class="validation"></div>
@@ -236,19 +247,66 @@
                                 <div class="span8 form-group">
                                     <div class="text-center">
                                         <button class="btn btn-color btn-rounded" id="btn_Guardar" name="btn_Guardar" type="submit">Guardar</button>
-                                      <div class="validation"></div>
+                                        <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
+                                     <div class="validation"></div>
                                     </div>
                                 </div>
                         </div>
                     </div>
                 </div>
                 </form>
-                <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
             </div>
         </div>
     </div>
 </div>
 </section>
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="widget">
+           
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+            
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+                   
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="verybottom">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+             
+            </p>
+          </div>
+          <div class="span6">
+            <div class="credits">
+
+              <p> 
+                <?php  
+                  if(isset($_SESSION["status"])==true){
+                    $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
+                    echo $mensaje;
+                  } ?> 
+              </p>
+              <p class="right">
+                  &copy; 2018 RENTCAR. 
+                </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 <!-- JavaScript Library Files -->

@@ -1,9 +1,6 @@
 <?php
   include("../class/class-conexion.php");
   $conexion= new Conexion();
-  $aux=null;
-  $aux1=null;
-  $aux2=null;
   $query=null;
 
   if(isset($_POST["cbx_SeleccioneGenero"])){
@@ -11,7 +8,6 @@
     $genero=(int)$genero;
   }
   
-
   if(isset($_POST["text_PrimerNombre"])){
     $primernombre=$_POST["text_PrimerNombre"];
     

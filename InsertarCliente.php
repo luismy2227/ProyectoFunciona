@@ -1,6 +1,11 @@
+<?php
+  session_start();
+  if(isset($_SESSION["status"])==false){
+    session_destroy();
+    header("Location: login.php");
+  }
+?>
 <!DOCTYPE html>
-
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -177,18 +182,65 @@
                                 <div class="span8 form-group">
                                     <div class="text-center">
                                         <button class="btn btn-color btn-rounded" id="btn_Guardar" name="btn_Guardar" type="submit">Guardar</button>
+                                        <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
                                     </div>
                                 </div>
                         </div>
                     </div>
                 </div>
                 </form>
-                <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
             </div>
         </div>
     </div>
 </div>
 </section>
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="widget">
+           
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+            
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+                   
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="verybottom">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+             
+            </p>
+          </div>
+          <div class="span6">
+            <div class="credits">
+
+              <p> 
+                <?php  
+                  if(isset($_SESSION["status"])==true){
+                    $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
+                    echo $mensaje;
+                  } ?> 
+              </p>
+              <p class="right">
+                  &copy; 2018 RENTCAR. 
+                </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 <!-- JavaScript Library Files -->
