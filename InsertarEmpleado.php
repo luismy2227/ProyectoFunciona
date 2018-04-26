@@ -1,3 +1,44 @@
+<?php
+  include("class/class-conexion.php");
+  $conexion = new Conexion();
+  //Obteniendo los cargo
+  $query = "SELECT idcargo, descripcion FROM tbl_cargo ORDER BY descripcion;";
+  $rescargo = $conexion->ejecutarConsulta($query);
+
+  //Obteniendo llos Empleado Superior
+  $query = "SELECT e.idempleadosuperior,c.descripcion FROM tbl_cargo c
+              INNER JOIN tbl_empleado e ON c.idcargo=e.idcargo
+                    ORDER BY descripcion;";
+  $resempleadosuperior = $conexion->ejecutarConsulta($query);
+
+ 
+  /*$msg="";
+  $idVehiculo =0;
+  $idFoto =0;
+  if(isset($_POST['upload'])){
+    $target = "uploaded/".basename($_FILES['image']['name']);
+    $image = $_FILES['image']['name'];
+
+    $query ="SELECT MAX(idVehiculo) FROM tbl_Vehiculo;";
+    $idVehiculo = ($conexion -> ejecutarConsulta($query)) + 1;
+    $query ="SELECT MAX(idFoto) FROM tbl_Foto;";
+    $idFoto = ($conexion -> ejecutarConsulta($query)) + 1;
+
+    if(move_uploaded_file(($_FILES['image']['tmp_name']), $target)){
+      $msg = "Se subió exitosamente la imagen";
+    }else{
+      $msg="Se produjo un error al subir la imagen";
+    }
+    $query = "INSERT INTO tbl_Foto (idFoto, rutaFoto, idVehiculo) VALUES('$idFoto', '$target', '$idVehiculo');";
+    $conexion->ejecutarConsulta($query);
+  }*/
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 
 
@@ -131,10 +172,22 @@
                 <div class="validation"></div>
                               </div>
                               <div class="span4 form-group">
-                                <input type="text" class="form-control" name="text_Idcargo" id="text_Idcargo" placeholder="Ingrese Id Cargo"  data-rule="minlen:4" data-msg="Porfavor ingrese Id del Cargo" />
-                <div class="validation"></div>
-                <input type="text" class="form-control" name="text_EmpleadoSuperior" id="text_EmpleadoSuperior" placeholder="Ingrese Id EmpleadoSuperior"  data-rule="minlen:4" data-msg="Porfavor ingrese Id Empleado Superior" />
-                <div class="validation"></div>
+                                <div> 
+                                <select id="cbx_Idcargo" name="cbx_Idcargo">
+                                  <option value='0'>Cargo</option>
+                                  <?php while($rowcargo = pg_fetch_array($rescargo)) { ?>
+                                  <option value="<?php echo $rowcargo[0]; ?>" ><?php echo $rowcargo[1]; ?> </option>
+                                  <?php } ?>
+                                </select>
+                              </div>
+                 <div> 
+                                <select id="cbx_EmpleadoSuperior" name="cbx_EmpleadoSuperior">
+                                  <option value='0'>Empleado Superior</option>
+                                  <?php while($rowempleadosuperior = pg_fetch_array($resempleadosuperior)) { ?>
+                                  <option value="<?php echo $rowempleadosuperior[0]; ?>" ><?php echo $rowempleadosuperior[1]; ?> </option>
+                                  <?php } ?>
+                                </select>
+                              </div>
                               <select type="text" id="cbx_SeleccioneGenero" name="cbx_SeleccioneGenero" class="form-control" placeholder="Seleccione Genero"  data-rule="minlen:4" data-msg="Seleccione un Genero">
                                   <option value='0'>Seleccione un Genero</option>
                                   <option value='1'>Femenino</option>

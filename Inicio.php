@@ -1,3 +1,4 @@
+
 <?php
   session_start();
   if(isset($_SESSION["status"])==false){
@@ -51,10 +52,9 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown active">
-                
-                  <a href="index.php">Inicio</a>
+                  <a href="index.html">Inicio</a>
                 </li>
-               <li class="dropdown">
+                <li class="dropdown">
                   <a href="#">Vehículos</a>
                   <ul class="dropdown-menu">
                     <li><a href="overview.html">Ver Todo</a></li>
@@ -71,24 +71,42 @@
                 <li class="dropdown">
                   <a href="#">Mantenimiento</a>
                   <ul class="dropdown-menu">
-                    <li><a href="about.html">Servicios</a></li>
-                    <li><a href="pricingtable.html">Repuestos</a></li>
-                  
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="pricingtable.html">Pricing table</a></li>
+                    <li><a href="fullwidth.html">Fullwidth</a></li>
+                    <li><a href="404.html">404</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a href="#">Sucursales</a>
-                 
+                  <ul class="dropdown-menu">
+                    <li><a href="blog_left_sidebar.html">Blog left sidebar</a></li>
+                    <li><a href="blog_right_sidebar.html">Blog right sidebar</a></li>
+                    <li><a href="post_left_sidebar.html">Post left sidebar</a></li>
+                    <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Contactenos</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
+                    <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
+                    <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
+                    <li><a href="portfolio-detail.html">Portfolio detail</a></li>
+                  </ul>
                 </li>
                 
-                <?php
+                <li>
+                  <a href="contact.html">Contacto</a>
+                </li>
+                  <?php
                   if(isset($_SESSION["status"])==true){
                     $boton ="<li><a  id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\">Cerrar Sesión</a></li>";
                     echo $boton;
                   }
                 ?>
-                
               </ul>
+
             </nav>
           </div>
           <!-- end menu -->
@@ -119,9 +137,9 @@
                     <div class="info animate-in">
                       <h2>Rent Car</h2>
                       <br>
-                      <h3>Más que una Coorporacion</h3>
+                      <h3>Mas que una Coorporacion</h3>
                       <p>
-                        Ven, Atrevete a disfrutar una experiencia diferente.
+                        Ven Atrevete a disfrutar una experiencia diferente.
                       </p>
                      
                     </div>
@@ -145,7 +163,7 @@
                     <div class="info">
                       <h2>Contamos con los mejores autos</h2>
                       <br>
-                      <h3>Lo último en tecnologia </h3>
+                      <h3>Lo ultimo en tecnologia </h3>
                       <p>
                         Porque nosotros somos tu opcion atrevete 
                       </p>
@@ -167,31 +185,31 @@
       <div class="row">
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-suitcase left active"></i>
-          <h4>RENTCAR</h4>
+          <h4>RentCar</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Una compañía dedicada a ofrecer lo mejor en renta ,venta y mantenimiento de tu vehículo, con nosotros la calidad es una obligación, ven y pruébalo.
+            Una compañia dedicada a ofrecer lo mejor en renta ,venta,mantenimiento de tu vehiculo con nosotros la calidad es una obligacion ven y pruebalo.
           </p>
          
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-plane left"></i>
-          <h4>Venta de vehículos</h4>
+          <h4>Venta</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            La venta de vehículos con nosotros es la más segura que podrás encontrar, RENTCAR te ofrece un mejor servicio a nivel nacional, buscanos.
+            La venta de vehiculos con nosotros es la mas segura que podras encontrar rentcar te ofrece un mejor servicio a nivel nacional buscanos .
           </p>
          
         </div>
         <div class="span3 features">
           <i class="icon-circled icon-32 icon-leaf left"></i>
-          <h4>Renta de vehículos</h4>
+          <h4>Renta Vehiculo</h4>
           <div class="dotted_line">
           </div>
           <p class="left">
-            Nuestro servicio de renta de vehículos, es el mejor a nivel  nacional, porque nosotros te ofrecemos el mejor servicio, RENTCAR, tu mejor opción.
+            Nuestro servicio de renta de vehiculo es el mejor a nivel  nacional porque nosotros te ofrecemos el mejor servicio Rentcar tu mejor opcion.
           </p>
          
         </div>
@@ -201,7 +219,7 @@
           <div class="dotted_line">
           </div>
           <p class="left">
-            Encargados de brindar el mejor servicio en todo el país, ven a conocernos, nosotros somos los mejores en lo que hacemos. ¿Quieres calidad? busca RENTCAR.
+            Encargados de brindar el mejor servicio en todo el pais ven a conocernos nosotros somos los mejores en lo que hacemos quieres calidad busca rentcar.
           </p>
          
         </div>
@@ -310,8 +328,7 @@
           </div>
           <div class="span6">
             <div class="credits">
-
-              <p> 
+                <p> 
                 <?php  
                   if(isset($_SESSION["status"])==true){
                     $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
@@ -321,6 +338,7 @@
               <p class="right">
                   &copy; 2018 RENTCAR. 
                 </p>
+             
           </div>
         </div>
       </div>
@@ -343,7 +361,7 @@
   <script src="assets/js/hover/setting.js"></script>
 
   <!-- Template Custom JavaScript File -->
-  <script src="assets/js/custom.js"></script>
+<script src="assets/js/custom.js"></script>
   
   <script src="js/logout.js"></script>
 

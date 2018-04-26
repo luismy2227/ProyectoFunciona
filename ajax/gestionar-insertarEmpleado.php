@@ -31,15 +31,16 @@ if(isset($_POST["text_PrimerNombre"])){
     $fechapromocion=$_POST["text_FechaPromocion"];
     
   }
-   if(isset($_POST["text_Idcargo"])){
-    $cargo=$_POST["text_Idcargo"];
-  
+   if(isset($_POST["cbx_Idcargo"])){
+    $cargo=$_POST["cbx_Idcargo"];
+    $cargo=(int)$cargo;
   }
-    
-   if(isset($_POST["text_EmpleadoSuperior"])){
-    $empleadosuperior=$_POST["text_EmpleadoSuperior"];
+
+  if(isset($_POST["cbx_EmpleadoSuperior"])){
+    $empleadosuperior=$_POST["cbx_EmpleadoSuperior"];
+    $empleadosuperior=(int)$empleadosuperior;
+  }
    
-  }
   if(isset($_POST["text_NombreUsuario"])){
     $nombreusuario=$_POST["text_NombreUsuario"];
     
@@ -103,6 +104,12 @@ if(isset($_POST["text_PrimerNombre"])){
 
   if($genero==0){
     $respuesta="Seleccione un Genero"; 
+  }
+  if($cargo==0){
+    $respuesta="Seleccione un Cargo"; 
+  }
+  if($empleadosuperior==0){
+    $respuesta="Seleccione un Empleado Superior"; 
   }
 else if ($primernombre==null or $primernombre==""){
   $respuesta="Ingrese Primer Nombre";
@@ -171,14 +178,7 @@ else if ($fechacontratacion==null or $fechacontratacion==""){
   $fechacontratacion="Ingrese la fecha Contratacion";
 
 }
-else if ($cargo==null or $cargo==""){
-  $cargo="Ingrese el Cargo";
 
-}
-else if ($empleadosuperior==null or $empleadosuperior==""){
-  $empleadosuperior="Ingrese el ID de Empleado Superior";
-
-}
 else if ($numerocasa==null or $numerocasa==""){
   $numerocasa="Ingrese el numerocasa";
 
