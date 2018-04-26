@@ -1,9 +1,9 @@
 <?php
-  session_start();
-  if(isset($_SESSION["status"])==false){
+    session_start();
+    if(isset($_SESSION["status"])==false){
     session_destroy();
     header("Location: login.php");
-  }
+    }
 ?>
 <!DOCTYPE html>
 <?php
@@ -97,57 +97,62 @@
                             <nav>
                                 <ul class="nav topnav">
                                     <li class="dropdown active">
-                                        <a href="index.html">Inicio</a>
+
+                                        <a href="index.php">Inicio</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Features</a>
+                                        <a href="#">Vehículos</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="overview.html">Overview</a></li>
-                                            <li><a href="scaffolding.html">Scaffolding</a></li>
-                                            <li><a href="base-css.html">Base CSS</a></li>
-                                            <li><a href="components.html">Components</a></li>
-                                            <li><a href="javascript.html">Javascripts</a></li>
-                                            <li><a href="icons.html">More icons</a></li>
-                                            <li class="dropdown"><a href="#">3rd level</a>
+                                            <li><a href="overview.html">Ver Todo</a></li>
+                                            <li><a href="scaffolding.html">Renta</a></li>
+                                            <li><a href="base-css.html">Venta</a></li>
+                                            <li class="dropdown"><a href="#">Agregar</a>
                                                 <ul class="dropdown-menu sub-menu">
-                                                    <li><a href="#">Example menu</a></li>
-                                                    <li><a href="#">Example menu</a></li>
-                                                    <li><a href="#">Example menu</a></li>
+                                                    <li><a href="InsertarAutoCliente.php">Agregar Auto Cliente</a></li>
+                                                    <li><a href="InsertarAutoEmpresa.php">Agregar Auto Empresa</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Pages</a>
+                                        <a href="#">Personas</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="about.html">About us</a></li>
-                                            <li><a href="pricingtable.html">Pricing table</a></li>
-                                            <li><a href="fullwidth.html">Fullwidth</a></li>
-                                            <li><a href="404.html">404</a></li>
+                                            <li class="dropdown"><a href="#">Clientes</a>
+                                                <ul class="dropdown-menu sub-menu">
+                                                    <li><a href="InsertarCliente.php">Agregar Cliente</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"><a href="#">Empleados</a>
+                                                <ul class="dropdown-menu sub-menu">
+                                                    <li><a href="InsertarEmpleado.php">Agregar Empleado</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Blog</a>
+                                        <a href="#">Mantenimiento</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="blog_left_sidebar.html">Blog left sidebar</a></li>
-                                            <li><a href="blog_right_sidebar.html">Blog right sidebar</a></li>
-                                            <li><a href="post_left_sidebar.html">Post left sidebar</a></li>
-                                            <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
+                                            <li><a href="about.html">Servicios</a></li>
+                                            <li><a href="pricingtable.html">Repuestos</a></li>
+
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Portfolio</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                                            <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                                            <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                                            <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                                        </ul>
+                                        <a href="#">Sucursales</a>
+
                                     </li>
 
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
+                                    <?php
+                                    if(isset($_SESSION["status"])==true){
+                                    $boton ="<li><a  id=\"btn_Logout\" name=\"btn_Logout\" href=\"includes/logout.php\">Cerrar Sesión</a></li>";
+                                    echo $boton;
+                                    }
+                                    else{
+                                    $boton1 ="<li><a  id=\"btn_Log\" name=\"btn_Log\" href=\"login.php\">Iniciar Sesión</a></li>";
+                                    echo $boton1;
+                                    }
+                                    ?>
+
                                 </ul>
                             </nav>
                         </div>
@@ -288,14 +293,16 @@
                                 </div>
                                 <div class="span8 form-group">
                                     <div class="text-center">
+
                                         <button class="btn btn-color btn-rounded" id="btn_Guardar" name="btn_Guardar" type="submit">Guardar</button>
+                                        <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
+
                                     </div>
                                 </div>
                         </div>
                     </div>
                 </div>
                 </form>
-                <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
             </div>
         </div>
     </div>
@@ -303,51 +310,51 @@
 </section>
 <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="span4">
-          <div class="widget">
-           
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
-            
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
-                   
+        <div class="row">
+            <div class="span4">
+                <div class="widget">
 
-          </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="widget">
+
+                </div>
+            </div>
+            <div class="span4">
+                <div class="widget">
+
+
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="verybottom">
-      <div class="container">
-        <div class="row">
-          <div class="span6">
-            <p>
-             
-            </p>
-          </div>
-          <div class="span6">
-            <div class="credits">
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <p>
 
-              <p> 
-                <?php  
-                  if(isset($_SESSION["status"])==true){
-                    $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
-                    echo $mensaje;
-                  } ?> 
-              </p>
-              <p class="right">
-                  &copy; 2018 RENTCAR. 
-                </p>
-          </div>
+                    </p>
+                </div>
+                <div class="span6">
+                    <div class="credits">
+
+                        <p> 
+                            <?php  
+                            if(isset($_SESSION["status"])==true){
+                            $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
+                            echo $mensaje;
+                            } ?> 
+                        </p>
+                        <p class="right">
+                            &copy; 2018 RENTCAR. 
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+</footer>
 
 
 <!-- JavaScript Library Files -->
@@ -377,42 +384,42 @@
 
 <!--Combobox dependientes-->
 <script language="javascript">
-                    //Combobox de modelos
-                    $(document).ready(function () {
-                        $("#cbx_Marca").change(function () {
-                            $('#cbx_Version').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
-                            $("#cbx_Marca option:selected").each(function () {
-                                idMarca = $(this).val();
-                                $.post("includes/get-Modelos.php", {idMarca: idMarca}, function (data) {
-                                    $("#cbx_Modelo").html(data);
-                                });
-                            });
-                        })
-                    });
+    //Combobox de modelos
+    $(document).ready(function () {
+        $("#cbx_Marca").change(function () {
+            $('#cbx_Version').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
+            $("#cbx_Marca option:selected").each(function () {
+                idMarca = $(this).val();
+                $.post("includes/get-Modelos.php", {idMarca: idMarca}, function (data) {
+                    $("#cbx_Modelo").html(data);
+                });
+            });
+        })
+    });
 
-                    //Combobox de versiones
-                    $(document).ready(function () {
-                        $("#cbx_Modelo").change(function () {
-                            $("#cbx_Modelo option:selected").each(function () {
-                                idModelo = $(this).val();
-                                $.post("includes/get-Versiones.php", {idModelo: idModelo}, function (data) {
-                                    $("#cbx_Version").html(data);
-                                });
-                            });
-                        })
-                    });
+    //Combobox de versiones
+    $(document).ready(function () {
+        $("#cbx_Modelo").change(function () {
+            $("#cbx_Modelo option:selected").each(function () {
+                idModelo = $(this).val();
+                $.post("includes/get-Versiones.php", {idModelo: idModelo}, function (data) {
+                    $("#cbx_Version").html(data);
+                });
+            });
+        })
+    });
 
-                    //Combobox de garages
-                    $(document).ready(function () {
-                        $("#cbx_Sucursal").change(function () {
-                            $("#cbx_Sucursal option:selected").each(function () {
-                                idSucursal = $(this).val();
-                                $.post("includes/get-Sucursales.php", {idSucursal: idSucursal}, function (data) {
-                                    $("#cbx_Garage").html(data);
-                                });
-                            });
-                        })
-                    });
+    //Combobox de garages
+    $(document).ready(function () {
+        $("#cbx_Sucursal").change(function () {
+            $("#cbx_Sucursal option:selected").each(function () {
+                idSucursal = $(this).val();
+                $.post("includes/get-Sucursales.php", {idSucursal: idSucursal}, function (data) {
+                    $("#cbx_Garage").html(data);
+                });
+            });
+        })
+    });
 </script>
 
 </body>
