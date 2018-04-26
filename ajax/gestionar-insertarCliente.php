@@ -8,7 +8,6 @@
     $genero=(int)$genero;
   }
   
-
   if(isset($_POST["text_PrimerNombre"])){
     $primernombre=$_POST["text_PrimerNombre"];
     
