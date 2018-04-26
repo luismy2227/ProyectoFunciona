@@ -177,13 +177,13 @@
                                 <div class="span8 form-group">
                                     <div class="text-center">
                                         <button class="btn btn-color btn-rounded" id="btn_Guardar" name="btn_Guardar" type="submit">Guardar</button>
+                                        <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
                                     </div>
                                 </div>
                         </div>
                     </div>
                 </div>
                 </form>
-                <button class="btn btn-color btn-rounded" id="btn_Cancelar" name="btn_Cancelar" type="cancel" onclick="javascript:window.location = 'index.php';">Cancelar</button>
             </div>
         </div>
     </div>

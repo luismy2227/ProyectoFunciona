@@ -111,8 +111,12 @@
                                  <input type="text" class="form-control" name="text_SegundoNombre" id="text_SegundoNombre"  data-rule="minlen:4" placeholder="Segundo Nombre" data-msg="SegundoNombre" />
                                </div>
                                <div class="span4 form-group">
-                                 <input type="text" class="form-control" name="text_Correo" id="text_Correo" placeholder="Ingrese Correo" data-rule="minlen:4" data-msg="Porfavor ingrese Correo"/>
-                <div class="validation"></div>
+                                 <!--input type="text" class="form-control" name="text_Correo" id="text_Correo" placeholder="Ingrese Correo" data-rule="minlen:4" data-msg="Porfavor ingrese Correo"/>
+                <div class="validation"></div-->
+                  <div class="wrap-input100 validate-input m-b-16" data-validate = "Correo Requerido">
+                        <input class="input100" type="email" name="text_Correo" id="text_Correo" placeholder="Correo" required autofocus>
+                        <span class="focus-input100"></span>
+                    </div>
                
                 <input type="text" class="form-control" name="text_Telefono" id="text_Telefono" placeholder="Ingrese Telefono" data-rule="minlen:4" data-msg="Porfavor ingrese Telefono" />
                 <div class="validation"></div>
