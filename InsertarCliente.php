@@ -1,6 +1,11 @@
+<?php
+  session_start();
+  if(isset($_SESSION["status"])==false){
+    session_destroy();
+    header("Location: login.php");
+  }
+?>
 <!DOCTYPE html>
-
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -189,6 +194,53 @@
     </div>
 </div>
 </section>
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="widget">
+           
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+            
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+                   
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="verybottom">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+             
+            </p>
+          </div>
+          <div class="span6">
+            <div class="credits">
+
+              <p> 
+                <?php  
+                  if(isset($_SESSION["status"])==true){
+                    $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
+                    echo $mensaje;
+                  } ?> 
+              </p>
+              <p class="right">
+                  &copy; 2018 RENTCAR. 
+                </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 <!-- JavaScript Library Files -->

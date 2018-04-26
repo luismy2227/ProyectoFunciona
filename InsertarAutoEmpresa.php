@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(isset($_SESSION["status"])==false){
+    session_destroy();
+    header("Location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <?php
   include("class/class-conexion.php");
@@ -71,13 +78,13 @@
 
 
   </head>
-<<<<<<< HEAD
+
  <body>
   <header>
-=======
+
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
     <header>
->>>>>>> 90bfe67dbf723ff7d7ee2dcb58634a1531f9bed5
+
     <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-fixed-top">
@@ -87,11 +94,11 @@
           <a class="brand logo" href="index.html"><img src="assets/img/logo.png" alt=""></a>
           <!-- end logo -->
           <!-- top menu -->
-<<<<<<< HEAD
+
         <div class="navigation">
-=======
+
           <div class="navigation">
->>>>>>> 90bfe67dbf723ff7d7ee2dcb58634a1531f9bed5
+
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown active">
@@ -154,11 +161,9 @@
       </div>
     </div>
   </header>
-<<<<<<< HEAD
+
 
     </header>
-=======
->>>>>>> 90bfe67dbf723ff7d7ee2dcb58634a1531f9bed5
 
         <section id="subintro">
             <div class="jumbotron subhead" id="overview">
@@ -372,6 +377,53 @@
               </div>
             </div>
           </section>
+          <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="widget">
+           
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+            
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
+                   
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="verybottom">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+             
+            </p>
+          </div>
+          <div class="span6">
+            <div class="credits">
+
+              <p> 
+                <?php  
+                  if(isset($_SESSION["status"])==true){
+                    $mensaje = "Usted se ha identificado como ".$_SESSION["nombre"];
+                    echo $mensaje;
+                  } ?> 
+              </p>
+              <p class="right">
+                  &copy; 2018 RENTCAR. 
+                </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
     <!-- JavaScript Library Files -->
