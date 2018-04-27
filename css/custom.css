@@ -1,0 +1,26 @@
+.errorLogin{
+	color:#ff0000;
+	font-size: 13px;
+}
+
+.cards-courses-h{
+	background-color:#1DA1F2;
+	color:#fff;
+}
+
+.cards-courses-b{
+	background-color:#fff;
+	color:#333;
+	border-color: transparent;
+	border-radius: 1px;
+	border-width: 2px;
+	border-color: #1DA1F2;
+}
+
+.text-card-h{
+	padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 15px;
+    font-size: 20px;
+}

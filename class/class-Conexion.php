@@ -65,6 +65,11 @@
             return pg_fetch_array($resultado, 0,PGSQL_BOTH);
         }
 
+        public function obtenerFilas($resultado){
+            return pg_fetch_array($resultado, NULL, PGSQL_ASSOC);
+        }
+
+
 	}
 
   /*$conexion= new Conexion();

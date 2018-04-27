@@ -7,7 +7,7 @@ $(document).on("submit","#Login",function(event){
     //alert(user + password);
     $.ajax({
         type:"POST",
-        url:"ajax/gestionar-login.php",
+        url:"ajax/gestionar-allCars.php",
         dataType:"JSON",
         data:{
             "accion":"login",
